@@ -1,11 +1,11 @@
 # Microcomputer-Lab.
 Microcomputer Lab. course at NTUT
 
-School Semester： 2019-Fall    
+School Semester： 108-1    
 Course Number： 265804   
-Course Code：3602054
-Course Name：   微算機原理及應用實習    
-Instructor：    李仁貴
+Course Code：3602054  
+Course Name：微算機原理及應用實習    
+Instructor：李仁貴
 
 ---
 
