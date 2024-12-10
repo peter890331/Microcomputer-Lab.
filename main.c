@@ -12,7 +12,6 @@
 #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 #endif /* __GNUC__ */
 
-
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -34,10 +33,6 @@ static void MX_USART1_UART_Init(void); //+codeAa-E?Y-n|33o|a
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 static void MX_ADC1_Init(void);
 
-
-
-
-
 int main(void)
 {
   int z;
@@ -58,8 +53,6 @@ int main(void)
 	
   WAKEUP_BUTTON_GPIO_CLK_ENABLE();
 
-	
-	
   GPIO_InitStruct.Pin	= WAKEUP_BUTTON_PIN;
   GPIO_InitStruct.Mode  = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull  = GPIO_PULLDOWN;
@@ -91,8 +84,6 @@ int main(void)
   GPIO_InitStruct.Pull= GPIO_PULLUP;
   GPIO_InitStruct.Speed=GPIO_SPEED_FREQ_HIGH;
 
-
-  
   HAL_GPIO_Init(LED1_GPIO_PORT, &GPIO_InitStruct);
   HAL_GPIO_Init(LED2_GPIO_PORT, &GPIO_InitStruct);
   HAL_GPIO_Init(LED3_GPIO_PORT, &GPIO_InitStruct);
@@ -100,18 +91,12 @@ int main(void)
   #endif
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-	////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////
   MX_USART1_UART_Init(); 
-	//////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////
   MX_ADC1_Init();
   LCD_Init();
   LCD_Clear();
-
-
-
-	
-	
-	
 		
 	start:
 	if(HAL_GPIO_ReadPin(c, v)){	
@@ -274,13 +259,6 @@ int main(void)
 
 };
 
-
-
-
-
-
-
-
 PUTCHAR_PROTOTYPE
 {
   /* Place your implementation of fputc here */
@@ -290,7 +268,6 @@ PUTCHAR_PROTOTYPE
 
   return ch;
 }
-
 
 /** System Clock Configuration
 */
@@ -325,8 +302,8 @@ void MX_ADC1_Init(void)
 
   ADC_ChannelConfTypeDef sConfig;
 
-    /**Common config 
-    */
+  /**Common config 
+  */
   hadc1.Instance = ADC1;
   hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
   hadc1.Init.ContinuousConvMode = DISABLE;
@@ -336,8 +313,8 @@ void MX_ADC1_Init(void)
   hadc1.Init.NbrOfConversion = 1;
   HAL_ADC_Init(&hadc1);
 
-    /**Configure Regular Channel 
-    */
+  /**Configure Regular Channel 
+  */
   sConfig.Channel = ADC_CHANNEL_14;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
